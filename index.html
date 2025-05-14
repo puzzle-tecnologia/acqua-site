@@ -1,745 +1,980 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaPure Solutions | Advanced Wastewater Treatment</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACQUA | Tratamento de efluentes</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%);
-        }
-        .wave-shape {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-        .wave-shape svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 150px;
-        }
-        .wave-shape .shape-fill {
-            fill: #FFFFFF;
-        }
-        .process-step:hover .step-icon {
-            transform: rotateY(180deg);
-            background-color: #1d4ed8;
-        }
-        .process-step:hover h3 {
-            color: #1d4ed8;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-    </style>
-</head>
-<body class="font-sans antialiased text-gray-800">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-sans antialiased text-gray-800">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-water text-blue-600 text-3xl mr-2"></i>
-                        <span class="text-xl font-bold text-blue-600">AquaPure</span>
-                    </div>
-                </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#" class="text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600">Home</a>
-                    <a href="#services" class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">Services</a>
-                    <a href="#process" class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">Process</a>
-                    <a href="#about" class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
-                    <a href="#contact" class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300">
-                        Get a Quote
-                    </button>
-                </div>
-                <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <img
+                src="/assets/LOGO ACQUA sem texto.png"
+                style="width: 60px; height: 60px; margin-right: 10px"
+              />
+              <img src="/assets/LOGO ACQUA texto.png" style="width: 200px" />
             </div>
+          </div>
+          <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+            <a
+              href="#"
+              class="text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600"
+              >Home</a
+            >
+            <a
+              href="#services"
+              class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+              >Serviços</a
+            >
+            <a
+              href="#process"
+              class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+              >Processos</a
+            >
+             <a
+              href="#clients"
+              class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+              >Clientes</a
+            >
+            <a
+              href="#about"
+              class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+              >Sobre</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+              >Contatos</a
+            >
+          </div>
+          <div class="-mr-2 flex items-center md:hidden">
+            <button
+              type="button"
+              id="mobile-menu-button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
+            >
+              <span class="sr-only">Abrir menu principal</span>
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#" class="block px-3 py-2 text-base font-medium text-blue-600 border-l-4 border-blue-600 bg-blue-50">Home</a>
-                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-blue-600 hover:bg-blue-50">Services</a>
-                <a href="#process" class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-blue-600 hover:bg-blue-50">Process</a>
-                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-blue-600 hover:bg-blue-50">About</a>
-                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-blue-600 hover:bg-blue-50">Contact</a>
-                <button class="w-full mt-2 bg-blue-600 text-white px-4 py-2 rounded-md text-base font-medium hover:bg-blue-700 transition duration-300">
-                    Get a Quote
-                </button>
-            </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#"
+            class="block px-3 py-2 text-base font-medium text-blue-600 border-l-4 border-blue-600 bg-blue-50"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-blue-600 hover:bg-blue-50"
+            >Serviços</a
+          >
+          <a
+            href="#process"
+            class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-blue-600 hover:bg-blue-50"
+            >Processos</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-blue-600 hover:bg-blue-50"
+            >Sobre</a
+          >
+           <a
+              href="#contact"
+              class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+              >Contatos</a
+            >
+          <a
+            href="#contact"
+            class="block px-3 py-2 text-base font-medium text-gray-500 hover:text-blue-600 hover:bg-blue-50"
+            >Contatos</a
+          >
+         
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient relative overflow-hidden text-white">
-        <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-                <div class="mb-12 lg:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-                        Advanced Wastewater Treatment Solutions
-                    </h1>
-                    <p class="text-xl mb-8 opacity-90">
-                        We provide innovative and sustainable wastewater treatment technologies to protect our environment and conserve water resources.
-                    </p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <button class="bg-white text-blue-600 px-6 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition duration-300">
-                            Our Services <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                        <button class="border-2 border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
-                            <i class="fas fa-phone-alt mr-2"></i> Contact Us
-                        </button>
-                    </div>
-                </div>
-                <div class="relative">
-                    <img name="banner" src="https://images.unsplash.com/photo-1604314923234-5144a466130f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
-                         alt="Wastewater treatment plant" 
-                         class="rounded-lg shadow-2xl transform hover:scale-105 transition duration-500">
-                    <div class="absolute -bottom-6 -left-6 bg-yellow-400 w-32 h-32 rounded-full opacity-20"></div>
-                    <div class="absolute -top-6 -right-6 bg-green-400 w-24 h-24 rounded-full opacity-20"></div>
-                </div>
+    <section id="#" class="hero-gradient relative overflow-hidden text-white">
+      <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+          <div class="mb-12 lg:mb-0">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+              Por um mundo mais limpo!
+            </h1>
+            <p class="text-xl mb-8 opacity-90">
+              Soluções técnicas e sustentáveis para o tratamento de efluentes,
+              alinhadas às melhores práticas ambientais e às necessidades do seu
+              negócio.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+              <a href="#services">
+                <button
+                  class="bg-white text-blue-600 px-6 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition duration-300"
+                >
+                  Nossos serviços <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+              </a>
+              <button
+                class="border-2 border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300"
+              >
+                <a
+                  href="https://wa.me/5551980257497?text=Olá,%20encontrei%20seu%20contato%20através%20do%20site%20da%20Acqua%20tratamento%20de%20efluentes%20.%20Tenho%20interesse%20nos%20serviços%20de%20tratamentos,%20pode%20me%20ajudar?"
+                >
+                  <i class="fas fa-phone-alt mr-2"></i> Nos contate
+                </a>
+              </button>
             </div>
+          </div>
+          <div class="relative">
+            <img
+              name="banner"
+              src="https://images.unsplash.com/photo-1604314923234-5144a466130f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+              alt="Wastewater treatment plant"
+              class="rounded-lg shadow-2xl transform hover:scale-105 transition duration-500"
+            />
+            <div
+              class="absolute -bottom-6 -left-6 bg-yellow-400 w-32 h-32 rounded-full opacity-20"
+            ></div>
+            <div
+              class="absolute -top-6 -right-6 bg-green-400 w-24 h-24 rounded-full opacity-20"
+            ></div>
+          </div>
         </div>
-        <!--<div class="wave-shape">-->
-        <!--    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">-->
-        <!--        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>-->
-        <!--    </svg>-->
-        <!--</div>-->
+      </div>
+      <!--<div class="wave-shape">-->
+      <!--    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">-->
+      <!--        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>-->
+      <!--    </svg>-->
+      <!--</div>-->
     </section>
 
     <!-- Stats Section -->
     <section class="bg-gray-50 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-6">
-                    <div class="text-4xl font-bold text-blue-600 mb-2">25+</div>
-                    <div class="text-gray-600">Years Experience</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
-                    <div class="text-gray-600">Projects Completed</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl font-bold text-blue-600 mb-2">95%</div>
-                    <div class="text-gray-600">Water Reuse Rate</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl font-bold text-blue-600 mb-2">24/7</div>
-                    <div class="text-gray-600">Support Available</div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="p-6">
+            <div class="text-4xl font-bold text-blue-600 mb-2">4+</div>
+            <div class="text-gray-600">Anos no mercado</div>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+            <div class="text-gray-600">Projetos completados</div>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl font-bold text-blue-600 mb-2">95%</div>
+            <div class="text-gray-600">Média de água tratada</div>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl font-bold text-blue-600 mb-2">24/7</div>
+            <div class="text-gray-600">Suporte disponivel</div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-blue-600 font-semibold">OUR SERVICES</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Comprehensive Wastewater Solutions</h2>
-                <p class="max-w-2xl mx-auto text-gray-600">
-                    We offer a complete range of wastewater treatment services tailored to meet your specific needs and regulatory requirements.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-industry text-blue-600 text-6xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-3">Industrial Wastewater Treatment</h3>
-                        <p class="text-gray-600 mb-4">
-                            Custom solutions for manufacturing, food processing, chemical plants and other industrial applications.
-                        </p>
-                        <a href="#" class="text-blue-600 font-medium inline-flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-green-100 flex items-center justify-center">
-                        <i class="fas fa-home text-green-600 text-6xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-3">Municipal Wastewater Treatment</h3>
-                        <p class="text-gray-600 mb-4">
-                            Advanced systems for cities and communities to ensure clean water discharge and reuse.
-                        </p>
-                        <a href="#" class="text-green-600 font-medium inline-flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-purple-100 flex items-center justify-center">
-                        <i class="fas fa-recycle text-purple-600 text-6xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-3">Water Reclamation & Reuse</h3>
-                        <p class="text-gray-600 mb-4">
-                            Technologies to treat and repurpose wastewater for irrigation, industrial processes and more.
-                        </p>
-                        <a href="#" class="text-purple-600 font-medium inline-flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
-                        <i class="fas fa-flask text-yellow-600 text-6xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-3">Laboratory Testing</h3>
-                        <p class="text-gray-600 mb-4">
-                            Comprehensive water quality analysis to ensure compliance with environmental regulations.
-                        </p>
-                        <a href="#" class="text-yellow-600 font-medium inline-flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-red-100 flex items-center justify-center">
-                        <i class="fas fa-tools text-red-600 text-6xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-3">Maintenance & Repair</h3>
-                        <p class="text-gray-600 mb-4">
-                            Preventative maintenance and emergency repair services to keep your systems running smoothly.
-                        </p>
-                        <a href="#" class="text-red-600 font-medium inline-flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
-                        <i class="fas fa-lightbulb text-indigo-600 text-6xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-3">Consulting Services</h3>
-                        <p class="text-gray-600 mb-4">
-                            Expert advice on system design, optimization, and regulatory compliance for wastewater management.
-                        </p>
-                        <a href="#" class="text-indigo-600 font-medium inline-flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="text-center mb-16">
+          <span class="text-blue-600 font-semibold">Nossos Serviços</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+            Soluções abrangentes para águas residuais
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Oferecemos uma gama completa de serviços de tratamento de águas
+            residuais adaptados para atender às suas necessidades específicas e
+            requisitos regulatórios
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-blue-100 flex items-center justify-center">
+              <i class="fas fa-industry text-blue-600 text-6xl"></i>
+            </div>
+            <div class="p-8">
+              <h3 class="text-xl font-bold mb-3 text-center">
+                Efluentes Industriais • Caixa Separadora de Água e Óleo
+              </h3>
+              <!-- <p class="text-gray-600 mb-4">
+               Custom solutions for manufacturing, food processing, chemical
+                plants and other industrial applications.
+              </p> -->
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-purple-100 flex items-center justify-center">
+              <i class="fas fa-recycle text-purple-600 text-6xl"></i>
+            </div>
+            <div class="p-8">
+              <h3 class="text-xl font-bold mb-3 text-center">
+                Compostagem de Resíduos Classe II A. Residuos sólidos orgânicos.
+                Cinzas/ Cascas/ Lodo etc.
+              </h3>
+              <!-- <p class="text-gray-600 mb-4">
+                Advanced systems for cities and communities to ensure clean
+                water discharge and reuse.
+              </p> -->
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-green-100 flex items-center justify-center">
+              <i class="fas fa-home text-green-600 text-6xl"></i>
+            </div>
+            <div class="p-8">
+              <h3 class="text-xl font-bold mb-3 text-center">
+                Efluentes Sanitários • Esgoto Sanitário / Fossa Séptica • Caixa
+                de Gordura
+              </h3>
+              <!-- <p class="text-gray-600 mb-4">
+                Technologies to treat and repurpose wastewater for irrigation,
+                industrial processes and more.
+              </p> -->
+            </div>
+          </div>
+          <!-- 
+        
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-yellow-100 flex items-center justify-center">
+              <i class="fas fa-flask text-yellow-600 text-6xl"></i>
+            </div>
+            <div class="p-8">
+              <h3 class="text-xl font-bold mb-3">Laboratory Testing</h3>
+              <p class="text-gray-600 mb-4">
+                Comprehensive water quality analysis to ensure compliance with
+                environmental regulations.
+              </p>
+            </div>
+          </div>
+
+        
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-red-100 flex items-center justify-center">
+              <i class="fas fa-tools text-red-600 text-6xl"></i>
+            </div>
+            <div class="p-8">
+              <h3 class="text-xl font-bold mb-3">Maintenance & Repair</h3>
+              <p class="text-gray-600 mb-4">
+                Preventative maintenance and emergency repair services to keep
+                your systems running smoothly.
+              </p>
+            </div>
+          </div>
+
+          
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-indigo-100 flex items-center justify-center">
+              <i class="fas fa-lightbulb text-indigo-600 text-6xl"></i>
+            </div>
+            <div class="p-8">
+              <h3 class="text-xl font-bold mb-3">Consulting Services</h3>
+              <p class="text-gray-600 mb-4">
+                Expert advice on system design, optimization, and regulatory
+                compliance for wastewater management.
+              </p>
+            </div>
+          </div> -->
+        </div>
+      </div>
     </section>
 
     <!-- Process Section -->
     <section id="process" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-blue-600 font-semibold">OUR PROCESS</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">How We Treat Wastewater</h2>
-                <p class="max-w-2xl mx-auto text-gray-600">
-                    Our comprehensive treatment process ensures the highest quality results while being environmentally responsible.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
-                <!-- Process Step 1 -->
-                <div class="process-step text-center">
-                    <div class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500">
-                        <i class="fas fa-filter"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 transition duration-300">Preliminary Treatment</h3>
-                    <p class="text-gray-600 text-sm">
-                        Removal of large solids and grit through screening and sedimentation.
-                    </p>
-                </div>
-                
-                <div class="hidden md:flex justify-center">
-                    <i class="fas fa-arrow-right text-gray-300 text-2xl"></i>
-                </div>
-                
-                <!-- Process Step 2 -->
-                <div class="process-step text-center">
-                    <div class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500">
-                        <i class="fas fa-bacteria"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 transition duration-300">Primary Treatment</h3>
-                    <p class="text-gray-600 text-sm">
-                        Settling tanks remove organic and inorganic solids by gravity.
-                    </p>
-                </div>
-                
-                <div class="hidden md:flex justify-center">
-                    <i class="fas fa-arrow-right text-gray-300 text-2xl"></i>
-                </div>
-                
-                <!-- Process Step 3 -->
-                <div class="process-step text-center">
-                    <div class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 transition duration-300">Secondary Treatment</h3>
-                    <p class="text-gray-600 text-sm">
-                        Biological processes break down organic matter using microorganisms.
-                    </p>
-                </div>
-                
-                <div class="hidden md:flex justify-center">
-                    <i class="fas fa-arrow-right text-gray-300 text-2xl"></i>
-                </div>
-                
-                <!-- Process Step 4 -->
-                <div class="process-step text-center">
-                    <div class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 transition duration-300">Tertiary Treatment</h3>
-                    <p class="text-gray-600 text-sm">
-                        Advanced filtration and disinfection for water reuse applications.
-                    </p>
-                </div>
-                
-                <div class="hidden md:flex justify-center">
-                    <i class="fas fa-arrow-right text-gray-300 text-2xl"></i>
-                </div>
-                
-                <!-- Process Step 5 -->
-                <div class="process-step text-center">
-                    <div class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 transition duration-300">Sludge Treatment</h3>
-                    <p class="text-gray-600 text-sm">
-                        Processing and disposal of residual solids in an eco-friendly manner.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="mt-16 bg-blue-600 rounded-xl p-8 text-white">
-                <div class="md:flex items-center">
-                    <div class="md:w-2/3 mb-6 md:mb-0">
-                        <h3 class="text-2xl font-bold mb-2">Need a Custom Solution?</h3>
-                        <p>
-                            Every wastewater challenge is unique. Contact us to discuss your specific requirements.
-                        </p>
-                    </div>
-                    <div class="md:w-1/3 text-right">
-                        <button class="bg-white text-blue-600 px-6 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition duration-300">
-                            Contact Our Experts
-                        </button>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="text-center mb-16">
+          <span class="text-blue-600 font-semibold">Nossos processos</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+            Como nos tratamos a água
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Nosso processo de tratamento abrangente garante a mais alta
+            qualidade resultados e ao mesmo tempo ser ambientalmente
+            responsável.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+          <!-- Process Step 1 -->
+          <div class="process-step text-center">
+            <div
+              class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500"
+            >
+              <i class="fas fa-filter"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 transition duration-300">
+              Tratamento Preliminar
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Remoção de sólidos grandes e areia por meio de peneiramento e
+              sedimentação.
+            </p>
+          </div>
+
+          <div class="hidden md:flex justify-center">
+            <i class="fas fa-arrow-right text-gray-300 text-2xl"></i>
+          </div>
+
+          <!-- Process Step 2 -->
+          <div class="process-step text-center">
+            <div
+              class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500"
+            >
+              <i class="fas fa-bacteria"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 transition duration-300">
+              Tratamento primário
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Os tanques de decantação removem sólidos orgânicos e inorgânicos
+              por gravidade.
+            </p>
+          </div>
+
+          <div class="hidden md:flex justify-center">
+            <i class="fas fa-arrow-right text-gray-300 text-2xl"></i>
+          </div>
+
+          <!-- Process Step 3 -->
+          <div class="process-step text-center">
+            <div
+              class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500"
+            >
+              <i class="fas fa-microscope"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 transition duration-300">
+              Tratamento secundário
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Os processos biológicos decompõem a matéria orgânica usando
+              microorganismos.
+            </p>
+          </div>
+
+          <div class="hidden md:flex justify-center">
+            <i class="fas fa-arrow-right text-gray-300 text-2xl"></i>
+          </div>
+
+          <!-- Process Step 4 -->
+          <div class="process-step text-center">
+            <div
+              class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500"
+            >
+              <i class="fas fa-tint"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 transition duration-300">
+              Tratamento terciário
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Filtragem e desinfecção avançadas para aplicações de reutilização
+              de água.
+            </p>
+          </div>
+
+          <div class="hidden md:flex justify-center">
+            <i class="fas fa-arrow-right text-gray-300 text-2xl"></i>
+          </div>
+
+          <!-- Process Step 5 -->
+          <div class="process-step text-center">
+            <div
+              class="step-icon mx-auto mb-4 w-20 h-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-3xl transition duration-500"
+            >
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 transition duration-300">
+              Tratamento de Lodos
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Processamento e descarte de sólidos residuais de maneira
+              ecologicamente correta.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-16 bg-blue-600 rounded-xl p-8 text-white">
+          <div class="md:flex items-center">
+            <div class="md:w-2/3 mb-6 md:mb-0">
+              <h3 class="text-2xl font-bold mb-2">
+                Precisa de uma solução customizada?
+              </h3>
+              <p>
+                Entre em contato conosco para discutir seu requisitos
+                específicos.
+              </p>
+            </div>
+            <div class="md:w-1/3 text-right">
+              <a
+                href="https://wa.me/5551980257497?text=Olá,%20encontrei%20seu%20contato%20através%20do%20site%20da%20Acqua%20tratamento%20de%20efluentes%20.%20Tenho%20interesse%20nos%20serviços%20de%20tratamentos,%20pode%20me%20ajudar?"
+              >
+                <button
+                  class="bg-white text-blue-600 px-6 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition duration-300"
+                >
+                  Contate nossos especialistas
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-                <div class="mb-12 lg:mb-0">
-                    <span class="text-blue-600 font-semibold">ABOUT US</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">Pioneers in Wastewater Treatment</h2>
-                    <p class="text-gray-600 mb-6">
-                        Founded in 1998, AquaPure Solutions has grown to become a leader in innovative wastewater treatment technologies. Our team of engineers, scientists, and environmental specialists are dedicated to developing sustainable solutions that protect our water resources.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex">
-                            <div class="flex-shrink-0 text-green-500 mt-1">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-700 font-medium">ISO 9001 & 14001 Certified</p>
-                            </div>
-                        </div>
-                        <div class="flex">
-                            <div class="flex-shrink-0 text-green-500 mt-1">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-700 font-medium">Award-Winning Technologies</p>
-                            </div>
-                        </div>
-                        <div class="flex">
-                            <div class="flex-shrink-0 text-green-500 mt-1">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-700 font-medium">EPA & Local Regulatory Compliance</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="mt-8 bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition duration-300">
-                        Learn More About Us
-                    </button>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+          <div class="mb-12 lg:mb-0">
+            <span class="text-blue-600 font-semibold">Sobre nós</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">
+              Pioneiros no tratamento de água
+            </h2>
+            <p class="text-gray-600 mb-6">
+              A Acqua Serviços de tratamento nasceu do desejo de trabalhar por
+              um mundo melhor onde o respeito ao meio ambiente seja prioridade.
+              A motivação da Acqua é oferecer soluções técnicas, econômicas e
+              ambientalmente viáveis para o tratamento de efluentes. A falta de
+              opções para o tratamento de resíduos tem trazido consequências
+              sérias ao meio ambiente, tais como o armazenamento inadequado, o
+              descarte clandestino e os acidentes ambientais.
+            </p>
+            <div class="space-y-4">
+              <div class="flex">
+                <div class="flex-shrink-0 text-green-500 mt-1">
+                  <i class="fas fa-check-circle"></i>
                 </div>
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1604314923234-5144a466130f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
-                         alt="Water treatment facility" 
-                         class="rounded-lg shadow-xl">
-                    <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-lg shadow-lg w-3/4">
-                        <div class="flex items-center">
-                            <div class="text-4xl font-bold mr-4">25+</div>
-                            <div class="text-lg font-medium">Years of Experience in Water Treatment Solutions</div>
-                        </div>
-                    </div>
+                <div class="ml-3">
+                  <p class="text-gray-700 font-medium">
+                    Certificados ISO 9001 & 14001
+                  </p>
                 </div>
+              </div>
+              <div class="flex">
+                <div class="flex-shrink-0 text-green-500 mt-1">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-700 font-medium">Tecnologias premiadas</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="flex-shrink-0 text-green-500 mt-1">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-700 font-medium">
+                    EPA e conformidade regulatória local
+                  </p>
+                </div>
+              </div>
             </div>
+            <!-- <button
+              class="mt-8 bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition duration-300"
+            >
+              Learn More About Us
+            </button> -->
+          </div>
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1604314923234-5144a466130f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+              alt="Water treatment facility"
+              class="rounded-lg shadow-xl"
+            />
+            <div
+              class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-lg shadow-lg w-3/4"
+            >
+              <div class="flex items-center">
+                <div class="text-4xl font-bold mr-4">4+</div>
+                <div class="text-lg font-medium">
+                  Anos de experiência em soluções de tratamento de água
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-blue-600 font-semibold">TESTIMONIALS</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">What Our Clients Say</h2>
-                <p class="max-w-2xl mx-auto text-gray-600">
-                    We take pride in delivering exceptional service and results to our clients across various industries.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-xl">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">
-                        "AquaPure implemented a complete wastewater treatment system for our food processing plant that exceeded our expectations. Their team was professional and knowledgeable throughout the entire process."
-                    </p>
-                    <div class="flex items-center">
-                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client">
-                        <div>
-                            <h4 class="font-bold">Sarah Johnson</h4>
-                            <p class="text-gray-500 text-sm">Operations Manager, FreshFood Co.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-xl">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">
-                        "The municipal wastewater treatment plant upgrade completed by AquaPure has significantly improved our water quality while reducing operational costs. Their innovative approach saved our city millions."
-                    </p>
-                    <div class="flex items-center">
-                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
-                        <div>
-                            <h4 class="font-bold">Michael Rodriguez</h4>
-                            <p class="text-gray-500 text-sm">Public Works Director, Springfield City</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-xl">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">
-                        "As a chemical manufacturer, compliance with environmental regulations is critical. AquaPure's expertise helped us navigate complex requirements while optimizing our treatment processes."
-                    </p>
-                    <div class="flex items-center">
-                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client">
-                        <div>
-                            <h4 class="font-bold">Jennifer Lee</h4>
-                            <p class="text-gray-500 text-sm">EHS Manager, ChemTech Solutions</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <button class="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300">
-                    View More Testimonials
-                </button>
-            </div>
+    <section id="clients" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="text-center mb-16">
+          <span class="text-blue-600 font-semibold">Clientes</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+            Nossos parceiros
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Temos orgulho em oferecer serviços e resultados excepcionais aos
+            nossos clientes em vários setores.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="testimonial-card flex items-center bg-white p-8 rounded-xl shadow-lg transition duration-300"
+          >
+            <img src="assets/localiza.png" alt="" />
+            <!-- <div class="flex items-center mb-4">
+              <div class="text-yellow-400 text-xl">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              fringilla velit egestas nisi euismod congue. Mauris vitae urna ac
+              mi luctus facilisis vitae at tortor. Curabitur cursus ac nulla sed
+              facilisis. Donec sit amet libero dignissim, consectetur elit non,
+              lacinia dolor.
+            </p>
+            <div class="flex items-center">
+              <img
+                class="w-12 h-12 rounded-full mr-4"
+                src="https://randomuser.me/api/portraits/women/43.jpg"
+                alt="Client"
+              />
+              <div>
+                <h4 class="font-bold">Sarah Johnson</h4>
+                <p class="text-gray-500 text-sm">
+                  Operations Manager, FreshFood Co.
+                </p>
+              </div>
+            </div> -->
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="testimonial-card flex items-center bg-white p-8 rounded-xl shadow-lg transition duration-300"
+          >
+            <img src="assets/docile.png" alt="" />
+          </div>
+
+          <!-- Testimonial 3 -->
+
+          <div
+            class="testimonial-card flex items-center justify-center bg-white p-8 rounded-xl shadow-lg transition duration-300"
+          >
+            <img src="assets/bela_luna.png" alt="" />
+          </div>
+          <!-- <div class="flex items-center mb-4">
+              <div class="text-yellow-400 text-xl">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "As a chemical manufacturer, compliance with environmental
+              regulations is critical. AquaPure's expertise helped us navigate
+              complex requirements while optimizing our treatment processes."
+            </p>
+            <div class="flex items-center">
+              <img
+                class="w-12 h-12 rounded-full mr-4"
+                src="https://randomuser.me/api/portraits/women/65.jpg"
+                alt="Client"
+              />
+              <div>
+                <h4 class="font-bold">Jennifer Lee</h4>
+                <p class="text-gray-500 text-sm">
+                  EHS Manager, ChemTech Solutions
+                </p>
+              </div>
+            </div>-->
+        </div>
+
+        <div class="mt-12 text-center">
+          <button
+            class="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300"
+          >
+            Ver mais clientes
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-12">
-                <div class="mb-12 lg:mb-0">
-                    <span class="text-blue-600 font-semibold">CONTACT US</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">Get In Touch</h2>
-                    <p class="text-gray-600 mb-8">
-                        Have questions about our services or need a quote for your project? Our team is ready to assist you.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex">
-                            <div class="flex-shrink-0 text-blue-600 text-xl mt-1">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">Our Headquarters</h4>
-                                <p class="text-gray-600">123 Water Way, Suite 500<br>EcoCity, EC 98765</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex">
-                            <div class="flex-shrink-0 text-blue-600 text-xl mt-1">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">Phone</h4>
-                                <p class="text-gray-600">(800) 555-WATER<br>Mon-Fri: 8am-6pm EST</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex">
-                            <div class="flex-shrink-0 text-blue-600 text-xl mt-1">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">Email</h4>
-                                <p class="text-gray-600">info@aquapuresolutions.com<br>support@aquapuresolutions.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+          <div class="mb-12 lg:mb-0">
+            <span class="text-blue-600 font-semibold">Contato</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">
+              Entre em contato
+            </h2>
+            <p class="text-gray-600 mb-8">
+              Tem dúvidas sobre nossos serviços ou precisa de um orçamento para
+              o seu projeto? Nossa equipe está pronta para te ajudar.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex">
+                <div class="flex-shrink-0 text-blue-600 text-xl mt-1">
+                  <i class="fas fa-map-marker-alt"></i>
                 </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
-                    <form>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                                <input type="text" id="first-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-                            </div>
-                            <div>
-                                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                                <input type="text" id="last-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-                            </div>
-                            <div class="md:col-span-2">
-                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-                            </div>
-                            <div class="md:col-span-2">
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="mt-6 w-full bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition duration-300">
-                            Send Message
-                        </button>
-                    </form>
+                <div class="ml-4">
+                  <h4 class="text-lg font-semibold">Nossa sede</h4>
+                  <p class="text-gray-600">
+                    Rodovia ERS 128 S/N⁰ Bairro Glória
+                    <br />
+                    Fazenda Vilanova - RS - 95.875-000
+                  </p>
                 </div>
+              </div>
+
+              <div class="flex">
+                <div class="flex-shrink-0 text-blue-600 text-xl mt-1">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-semibold">Telefone</h4>
+                  <p class="text-gray-600">
+                    (51) 98025-7497<br />Seg-Sex: 9:00-18:00
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex">
+                <div class="flex-shrink-0 text-blue-600 text-xl mt-1">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-semibold">Email</h4>
+                  <p class="text-gray-600">comercial@acquatratamentos.com.br</p>
+                </div>
+              </div>
             </div>
+
+            <div class="mt-8">
+              <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300"
+                >
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">Nos mande uma mensagem</h3>
+            <form>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="first-name"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Primeiro nome</label
+                  >
+                  <input
+                    type="text"
+                    id="first-name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="last-name"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Sobrenome</label
+                  >
+                  <input
+                    type="text"
+                    id="last-name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Telefone</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  />
+                </div>
+
+                <div class="md:col-span-2">
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Mensagem</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  ></textarea>
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="mt-6 w-full bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition duration-300"
+              >
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Newsletter Section -->
-    <section class="py-16 bg-blue-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex items-center justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-2">Subscribe to Our Newsletter</h3>
-                    <p>Stay updated with the latest in wastewater treatment technologies and industry news.</p>
-                </div>
-                <div class="md:w-1/2">
-                    <form class="flex">
-                        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-md focus:outline-none text-gray-900">
-                        <button type="submit" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-r-md font-semibold hover:bg-yellow-500 transition duration-300">
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
-            </div>
+    <!-- <section class="py-16 bg-blue-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="md:flex items-center justify-between">
+          <div class="mb-6 md:mb-0">
+            <h3 class="text-2xl font-bold mb-2">Subscribe to Our Newsletter</h3>
+            <p>
+              Stay updated with the latest in wastewater treatment technologies
+              and industry news.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="flex-grow px-4 py-3 rounded-l-md focus:outline-none text-gray-900"
+              />
+              <button
+                type="submit"
+                class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-r-md font-semibold hover:bg-yellow-500 transition duration-300"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
         </div>
-    </section>
+      </div>
+    </section> -->
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-water text-blue-400 text-3xl mr-2"></i>
-                        <span class="text-xl font-bold">AquaPure</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        Advanced wastewater treatment solutions for a cleaner, more sustainable future.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
-                        <li><a href="#process" class="text-gray-400 hover:text-white transition duration-300">Our Process</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Industrial Treatment</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Municipal Systems</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Water Reuse</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Laboratory Testing</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Maintenance</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-                    <address class="not-italic text-gray-400">
-                        <p class="mb-2">123 Water Way, Suite 500</p>
-                        <p class="mb-2">EcoCity, EC 98765</p>
-                        <p class="mb-2">Phone: (800) 555-WATER</p>
-                        <p class="mb-2">Email: info@aquapuresolutions.com</p>
-                    </address>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="/assets/LOGO ACQUA sem texto.png"
+                style="width: 60px; height: 60px; margin-right: 10px"
+              />
+              <img src="/assets/LOGO ACQUA texto.png" style="width: 200px" />
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">
-                    &copy; 2023 AquaPure Solutions. All rights reserved.
-                </p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Sitemap</a>
-                </div>
+            <p class="text-gray-400 mb-4">
+              Soluções avançadas de tratamento de águas residuais para um
+              ambiente mais limpo e mais futuro sustentável.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Links Rapidos</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Serviços</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#process"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Processos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Sobre nós</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Contatos</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Serviços</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Efluentes Industriais</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Reciclagem de residuos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Efluentes Sanitários</a
+                >
+              </li>
+              <!-- <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Laboratory Testing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Maintenance</a
+                >
+              </li> -->
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Informação de contato</h4>
+            <address class="not-italic text-gray-400">
+              <p class="mb-2">Rodovia ERS 128 S/N⁰ Bairro Glória</p>
+              <p class="mb-2">Fazenda Vilanova - RS - 95.875-000</p>
+              <p class="mb-2">Telefone: (51) 98025-7497</p>
+              <p class="mb-2">Email: comercial@acquatratamentos.com.br</p>
+            </address>
+          </div>
         </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 mb-4 md:mb-0">
+            &copy; 2025 Puzzle Tecnologia. All rights reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition duration-300"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition duration-300"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition duration-300"
+              >Sitemap</a
+            >
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            });
-        });
-
-        // Form submission handling
-        const forms = document.querySelectorAll('form');
-        forms.forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // Here you would typically send the form data to your server
-                alert('Thank you for your message! We will contact you soon.');
-                form.reset();
-            });
-        });
-    </script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
