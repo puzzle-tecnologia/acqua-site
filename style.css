@@ -1,0 +1,32 @@
+ .hero-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%);
+        }
+        .wave-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-shape svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+        .wave-shape .shape-fill {
+            fill: #FFFFFF;
+        }
+        .process-step:hover .step-icon {
+            transform: rotateY(180deg);
+            background-color: #1d4ed8;
+        }
+        .process-step:hover h3 {
+            color: #1d4ed8;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
+        }
+   
