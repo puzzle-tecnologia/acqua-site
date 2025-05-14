@@ -566,7 +566,7 @@
                 
                 <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
                     <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
-                    <form>
+                    <form method="POST" action="email.php">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
@@ -731,7 +731,7 @@
         });
 
         // Form submission handling
-        const forms = document.querySelectorAll('form');
+        /*const forms = document.querySelectorAll('form');
         forms.forEach(form => {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -739,7 +739,7 @@
                 alert('Thank you for your message! We will contact you soon.');
                 form.reset();
             });
-        });
+        });*/
     </script>
 </body>
 </html>
